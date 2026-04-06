@@ -1,5 +1,4 @@
-# project_ideas
-While I lack some of the abilities to fully explore some ideas, I first want to make a page where I can list ideas I have and get started in the things I do know how to do.
+# bat_speed
 
 While working at LSU, I spoke to a representative at Marucci Sports who spoke to me about a project they did with the football team at LSU. They essentially ran tests to see how quickly a player reacted to a ball being thrown, and were able to determine which types of plays specific players can run better than others. For instance, one player may excell at seeing a deeper thrown ball high in the air which gives them a better chance at a deep ball throw. Meanwhile others react better to lower and faster throws, making them ideal targets for slants or quick breaking outs.
 
