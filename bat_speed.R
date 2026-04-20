@@ -11,11 +11,11 @@ bat_speed = bat_speed %>% mutate(swing_time = sqrt((225*(avg_swing_length)^2)/(1
 
 # Now I want to see correlation. To do this I will make a linear model. I will make two models, one with my made up swing time statistic and one without.
 # First up is expected woba
-lm_xwoba = lm(formula = xwoba ~ swing_time + avg_swing_speed + avg_swing_length,
+lm_xwoba = lm(formula = xwoba ~ avg_swing_speed + avg_swing_length,
               data = bat_speed)
 summary(lm_xwoba)
 
-lm_xwoba_time = lm(formula = xwoba ~ time + avg_swing_speed + avg_swing_length,
+lm_xwoba_time = lm(formula = xwoba ~ swing_time + avg_swing_speed + avg_swing_length,
         data = bat_speed)
 summary(lm_xwoba_time)
 
