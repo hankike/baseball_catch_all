@@ -9,7 +9,38 @@ bat_speed <- read.csv("C:/Users/hanke/Downloads/stats.csv")
 # Next I will mutate the data to add a time stat. This is simply the amount of time it will take for a player to swing.
 bat_speed = bat_speed %>% mutate(swing_time = sqrt((225*(avg_swing_length)^2)/(121*(avg_swing_speed)^2)))
 
-# Now I want to see correlation. To do this I will make a linear model. I will make two models, one with my made up swing time statistic and one without.
+# First I wish to find any simple correlation. We will make six scatterplots.
+p1 <- ggplot(bat_speed, aes(x=time, y=xwoba)) + 
+  geom_point( color="#69b3a2") +
+  geom_smooth(method=lm , color="red", se=FALSE)
+p1
+
+p2 <- ggplot(bat_speed, aes(x=time, y=xslg)) + 
+  geom_point( color="#69b3a2") +
+  geom_smooth(method=lm , color="red", se=FALSE)
+p2
+
+p3 <- ggplot(bat_speed, aes(x=avg_swing_speed, y=xwoba)) + 
+  geom_point( color="#69b3a2") +
+  geom_smooth(method=lm , color="red", se=FALSE)
+p3
+
+p4 <- ggplot(bat_speed, aes(x=avg_swing_speed, y=xslg)) + 
+  geom_point( color="#69b3a2") +
+  geom_smooth(method=lm , color="red", se=FALSE)
+p4
+
+p5 <- ggplot(bat_speed, aes(x=avg_swing_length, y=xwoba)) + 
+  geom_point( color="#69b3a2") +
+  geom_smooth(method=lm , color="red", se=FALSE)
+p5
+
+p6 <- ggplot(bat_speed, aes(x=avg_swing_length, y=xslg)) + 
+  geom_point( color="#69b3a2") +
+  geom_smooth(method=lm , color="red", se=FALSE)
+p6
+
+# Now I will make a linear model. I will make two models, one with my made up swing time statistic and one without.
 # First up is expected woba
 lm_xwoba = lm(formula = xwoba ~ avg_swing_speed + avg_swing_length,
               data = bat_speed)
